@@ -4,18 +4,18 @@
     android:layout_height="match_parent"
     xmlns:attr="http://schemas.android.com/apk/res-auto">
 
-    <!--<ImageView-->
-        <!--android:id="@+id/start_icon"-->
+    <ImageView
+        android:id="@+id/start_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Hello World "/>
+
+    <!--<com.mouldandroid.custom.myview.PowerImageView-->
+        <!--android:id="@+id/start_gif"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
-        <!--android:text="Hello World "/>-->
-
-    <com.mouldandroid.custom.myview.PowerImageView
-        android:id="@+id/start_gif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        attr:auto_play="true" />
+        <!--android:layout_centerInParent="true"-->
+        <!--attr:auto_play="true" />-->
 
     <!--<com.mouldandroid.custom.myview.GifView-->
         <!--android:id="@+id/start_gif"-->

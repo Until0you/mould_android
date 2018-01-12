@@ -27,7 +27,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:hardwareAccelerated="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <!--android:theme="@android:style/Theme.Light.NoTitleBar"-->
 
@@ -51,7 +50,7 @@
 
         <!-- 主界面 -->
         <activity
-            android:name="com.mouldandroid.activity.MainActivity"
+            android:name="com.mouldandroid.activity.main.MainActivity"
             android:screenOrientation="portrait">
         </activity>
 

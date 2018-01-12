@@ -6,7 +6,7 @@ import android.content.SharedPreferences.Editor;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
-import com.mouldandroid.activity.loading.StartEntity;
+import com.mouldandroid.entity.StartEntity;
 
 /**
  * Created by Administrator on 2018/1/11.

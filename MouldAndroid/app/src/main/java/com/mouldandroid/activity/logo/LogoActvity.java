@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -14,14 +13,17 @@ import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.mouldandroid.R;
-import com.mouldandroid.activity.loading.StartEntity;
+import com.mouldandroid.entity.StartEntity;
+import com.mouldandroid.urlInterface.APIServer;
 import com.mouldandroid.utils.ConstValues;
 import com.mouldandroid.utils.SharedPreferencesUtils;
 
-import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
-import org.xutils.x;
+
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Administrator on 2018/1/5.
@@ -37,6 +39,7 @@ public class LogoActvity extends AppCompatActivity implements Animation.Animatio
     private Gson gson;
     private SharedPreferencesUtils spUtils;
     private ImageOptions options;
+    private String img_url = "";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,7 +65,11 @@ public class LogoActvity extends AppCompatActivity implements Animation.Animatio
 
     private void initData() {
         spUtils = new SharedPreferencesUtils(this);
-        postData();
+
+//        postData();
+
+        retrofitPost();
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -95,52 +102,30 @@ public class LogoActvity extends AppCompatActivity implements Animation.Animatio
     public void onAnimationRepeat(Animation animation) {}
     @Override
     public void onAnimationEnd(Animation animation) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-        //结束之后的操作
-        Intent intent = new Intent(this,StartActivity.class);
+        Intent intent = new Intent(LogoActvity.this,StartActivity.class);
+        intent.putExtra("img_url",img_url);
         startActivity(intent);
         finish();
     }
 
-    private void postData(){
-        RequestParams params = new RequestParams(ConstValues.STARTUP);
-        params.addBodyParameter("ad","gif");
-        x.http().post(params,new MyCallBack());
-    }
-
-    private class MyCallBack implements Callback.CommonCallback<String>{
-        @Override
-        public void onSuccess(String s) {
-            if (!TextUtils.isEmpty(s)){
-                gsonDispose(s);
+    private void retrofitPost(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstValues.CSYM)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        APIServer apiServer = retrofit.create(APIServer.class);
+        Call<StartEntity> call = apiServer.getStartUrl("gif");
+        call.enqueue(new retrofit2.Callback<StartEntity>() {
+            @Override
+            public void onResponse(Call<StartEntity> call, Response<StartEntity> response) {
+                img_url = response.body().getAd_img();
             }
-        }
-        @Override
-        public void onError(Throwable throwable, boolean b) {}
-        @Override
-        public void onCancelled(CancelledException e) {}
-        @Override
-        public void onFinished() {}
-    }
 
-    //处理解析
-    private void gsonDispose(String result) {
-        gson = new Gson();
-        startEntity = gson.fromJson(result, StartEntity.class);
-        spUtils.setStartEntity(startEntity);   //保存到SharedPreferences
-    }
+            @Override
+            public void onFailure(Call<StartEntity> call, Throwable t) {
 
-    private void postDataTwo(){
+            }
+        });
 
     }
-
 }

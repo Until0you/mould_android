@@ -1,4 +1,4 @@
-package com.mouldandroid.activity.loading;
+package com.mouldandroid.entity;
 
 import java.io.Serializable;
 

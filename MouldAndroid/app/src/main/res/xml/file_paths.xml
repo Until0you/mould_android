@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<resource xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--<external-path name="external_files" path="." />-->
+    <!--&lt;!&ndash;这里的"Cache/"就是问题中抛出异常的那个路径&ndash;&gt;-->
+<!--</resource>-->
+
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    name属性的值可以随便写,别名
+    path属性的值表示共享的具体位置，设置空就表示将整个SD卡进行共享
+     -->
+    <paths>
+        <external-path
+            name="camera_photos"
+            path=""/>
+    </paths>
+</paths>

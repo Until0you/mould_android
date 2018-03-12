@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_48dp"
+        layout="@layout/title_layou"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/diment_20dp"
+        android:layout_marginRight="@dimen/diment_20dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/diment_30dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_launcher"/>
+
+        <EditText
+            android:id="@+id/et_registered_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="@string/edittext_name_digits"
+            android:background="@drawable/bottom_border"
+            android:singleLine="true"
+            android:maxLength="15"
+            android:hint="@string/login_hint_account"
+            android:padding="@dimen/diment_6dp"
+            android:textSize="@dimen/diment_18sp"
+            android:textColor="@color/color_656565"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/diment_10dp">
+
+            <EditText
+                android:id="@+id/registered_validation_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_border"
+                android:padding="@dimen/diment_6dp"
+                android:hint="请输入验证码"
+                android:textSize="@dimen/diment_18sp"
+                android:textColor="@color/color_656565"
+                android:maxLength="6"
+                android:layout_toStartOf="@+id/registered_obtain_code"
+                android:layout_centerVertical="true"/>
+
+            <com.mouldandroid.custom.view.TimeButton
+                android:id="@+id/registered_obtain_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/diment_20dp"
+                android:layout_centerVertical="true"
+                android:text="获取验证码"
+                android:singleLine="true"/>
+
+
+        </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/et_registered_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="@string/edittext_name_digits"
+            android:layout_marginTop="@dimen/diment_10dp"
+            android:background="@drawable/bottom_border"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:hint="@string/login_hint_password"
+            android:padding="@dimen/diment_6dp"
+            android:textColor="@color/color_656565"
+            android:textSize="@dimen/diment_18sp"/>
+
+        <Button
+            android:id="@+id/but_registered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/diment_25dp"
+            android:text="注  册"
+            android:textSize="@dimen/diment_18sp"
+            android:textColor="@color/color_ffffff"
+            android:background="@color/color_D6D7D7"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/diment_15dp"
+        android:paddingLeft="@dimen/diment_20dp"
+        android:paddingRight="@dimen/diment_20dp">
+
+        <TextView
+            android:id="@+id/tv_user_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户协议及隐私政策"/>
+
+        <TextView
+            android:id="@+id/tv_registered_convert_loging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="密码登录"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

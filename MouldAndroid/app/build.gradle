@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.mouldandroid"
-        minSdkVersion 20
-        targetSdkVersion 26
+        minSdkVersion 19
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -18,29 +18,66 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '26.0.1'
+            }
+        }
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.0.1'
+    compile 'com.android.support:support-v4:27.0.1'
+    implementation files('libs/libapshare.jar')
+    implementation files('libs/open_sdk_r5788_lite.jar')
+    implementation files('libs/SocialSDK_alipay.jar')
+    implementation files('libs/SocialSDK_QQ_Full.jar')
+    implementation files('libs/SocialSDK_Sina_Full.jar')
+    implementation files('libs/SocialSDK_WeiXin_Full.jar')
+    implementation files('libs/umeng_shareboard_widget.jar')
+    implementation files('libs/umeng_social_api.jar')
+    implementation files('libs/umeng_social_net.jar')
+    implementation files('libs/umeng_social_shareboard.jar')
+    implementation files('libs/umeng_social_tool.jar')
+    compile project(path: ':pickerview')
+    implementation files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    implementation files('libs/weiboSDKCore.jar')
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
-    compile 'com.google.code.gson:gson:2.6.2'              //G
-    compile 'org.xutils:xutils:3.3.38'                    //xUtils
-    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'   //gif图
-
+    //Gson
+    compile 'com.google.code.gson:gson:2.6.2'
+    //xUtils
+    compile 'org.xutils:xutils:3.3.38'
     //Retrofit和rxjava
     compile 'io.reactivex:rxandroid:1.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
-
     //Glide图片加载框架
     compile 'com.github.bumptech.glide:glide:3.5.2'
-
-
+    //Banner
+    compile 'cn.bingoogolapple:bga-banner:2.2.3@aar'
+    //底部导航栏
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
+    //Tablayout
+    implementation 'com.android.support:design:27.0.1'
+    //带闪烁的recyclerView
+    compile 'com.github.sharish:ShimmerRecyclerView:v1.0'
+    //  SwipeRecyclerview
+    compile 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+    //好用的下拉刷新，上啦加载easyrecyclerview
+    compile 'com.jude:easyrecyclerview:4.4.0'
+    //百分比布局
+    compile 'com.android.support:percent:27.0.+'
 
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/diment_42dp"
+    android:background="@color/color_333333">
+    
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="@dimen/diment_17dp"
+        android:paddingRight="@dimen/diment_17dp"
+        android:src="@mipmap/icon_back" />
+    
+    <TextView
+        android:id="@+id/tv_title_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:singleLine="true"
+        android:layout_marginLeft="@dimen/diment_50dp"
+        android:layout_marginRight="@dimen/diment_60dp"
+        android:text="Mould"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/diment_20sp" />
+    
+	<ImageView
+        android:id="@+id/iv_save"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/diment_17dp"
+        android:paddingRight="@dimen/diment_17dp"
+        android:src="@mipmap/icon_dialogue" />
+    
+</RelativeLayout>

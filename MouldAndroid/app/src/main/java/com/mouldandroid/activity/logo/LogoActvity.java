@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -13,10 +14,11 @@ import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.mouldandroid.R;
+import com.mouldandroid.activity.main.MainActivity;
 import com.mouldandroid.entity.StartEntity;
 import com.mouldandroid.urlInterface.APIServer;
 import com.mouldandroid.utils.ConstValues;
-import com.mouldandroid.utils.SharedPreferencesUtils;
+import com.mouldandroid.utils.MouldManager;
 
 import org.xutils.image.ImageOptions;
 
@@ -37,9 +39,10 @@ public class LogoActvity extends AppCompatActivity implements Animation.Animatio
     private static final int SUCCESS = 0;
     private StartEntity startEntity;
     private Gson gson;
-    private SharedPreferencesUtils spUtils;
+    private MouldManager spUtils;
     private ImageOptions options;
     private String img_url = "";
+    private String type = "";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,7 +67,7 @@ public class LogoActvity extends AppCompatActivity implements Animation.Animatio
     }
 
     private void initData() {
-        spUtils = new SharedPreferencesUtils(this);
+        spUtils = new MouldManager(this);
 
 //        postData();
 
@@ -102,9 +105,15 @@ public class LogoActvity extends AppCompatActivity implements Animation.Animatio
     public void onAnimationRepeat(Animation animation) {}
     @Override
     public void onAnimationEnd(Animation animation) {
-        Intent intent = new Intent(LogoActvity.this,StartActivity.class);
-        intent.putExtra("img_url",img_url);
-        startActivity(intent);
+        if (null != img_url && !TextUtils.isEmpty(img_url)){
+            Intent intent = new Intent(LogoActvity.this,StartActivity.class);
+            intent.putExtra("type",type);
+            intent.putExtra("img_url",img_url);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(LogoActvity.this, MainActivity.class);
+            startActivity(intent);
+        }
         finish();
     }
 
@@ -114,13 +123,15 @@ public class LogoActvity extends AppCompatActivity implements Animation.Animatio
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         APIServer apiServer = retrofit.create(APIServer.class);
-        Call<StartEntity> call = apiServer.getStartUrl("gif");
+        Call<StartEntity> call = apiServer.getStartUrl("img");
         call.enqueue(new retrofit2.Callback<StartEntity>() {
             @Override
             public void onResponse(Call<StartEntity> call, Response<StartEntity> response) {
-                img_url = response.body().getAd_img();
+                if (null != response.body()){
+                    img_url = response.body().getAd_img();
+                    type = response.body().getAd_type();
+                }
             }
-
             @Override
             public void onFailure(Call<StartEntity> call, Throwable t) {
 

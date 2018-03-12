@@ -8,7 +8,9 @@ package com.mouldandroid.utils;
 public class ConstValues {
 
     /** 域名 */
-    public static final String CSYM = "http://app.hzz.com/";
+    public static final String CSYM = "http://api.hzz.com/";
+    public static final String FOLDER = "mould";
     /** 广告页 */
     public static final String STARTUP = CSYM + "startup";
+
 }

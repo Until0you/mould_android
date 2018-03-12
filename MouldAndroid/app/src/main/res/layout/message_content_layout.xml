@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_48dp"
+        layout="@layout/title_layou"/>
+
+    <TextView
+        android:id="@+id/msg_content_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标题"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/diment_20dp"
+        android:textSize="@dimen/diment_20sp"/>
+
+    <TextView
+        android:id="@+id/msg_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="内容到底是什么呢"
+        android:layout_marginTop="@dimen/diment_10dp"
+        android:paddingLeft="@dimen/diment_15dp"
+        android:paddingRight="@dimen/diment_15dp"
+        android:textSize="@dimen/diment_16sp"/>
+
+
+</LinearLayout>

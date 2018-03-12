@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_home_dialog"
+        android:layout_width="@dimen/diment_0dp"
+        android:layout_height="@dimen/diment_0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:layout_heightPercent="55%"
+        app:layout_widthPercent="65%"
+        android:layout_marginBottom="@dimen/diment_50dp"/>
+    <!--app:layout_heightPercent="55%"-->
+    <!--app:layout_widthPercent="65%"-->
+
+    <ImageView
+        android:id="@+id/iv_home_cancel"
+        android:layout_width="@dimen/diment_35dp"
+        android:layout_height="@dimen/diment_35dp"
+        android:layout_below="@+id/iv_home_dialog"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher"/>
+
+
+
+</android.support.percent.PercentRelativeLayout>

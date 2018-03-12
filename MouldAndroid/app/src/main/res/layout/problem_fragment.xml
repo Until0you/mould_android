@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_48dp"
+        layout="@layout/title_layou"/>
+
+    <!--<com.cooltechworks.views.shimmer.ShimmerRecyclerView-->
+        <!--android:layout_marginTop="@dimen/diment_48dp"-->
+        <!--android:id="@+id/problem_shimmer_rv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:demo_child_count="10"-->
+        <!--app:demo_grid_child_count="2"-->
+        <!--android:visibility="visible"-->
+        <!--app:demo_layout_manager_type="linear_vertical"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/diment_48dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_content_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_45dp"
+            android:paddingLeft="@dimen/diment_10dp"
+            android:paddingRight="@dimen/diment_10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="内容列表"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/more_right" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_0.5dp"
+            android:background="@color/color_e4e4e4" />
+
+        <RelativeLayout
+            android:id="@+id/rl_graphic_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_45dp"
+            android:paddingLeft="@dimen/diment_10dp"
+            android:paddingRight="@dimen/diment_10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图文列表"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/more_right"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_0.5dp"
+            android:background="@color/color_e4e4e4" />
+
+        <RelativeLayout
+            android:id="@+id/rl_the_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_45dp"
+            android:paddingLeft="@dimen/diment_10dp"
+            android:paddingRight="@dimen/diment_10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="图表"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/more_right"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_0.5dp"
+            android:background="@color/color_e4e4e4" />
+
+        <RelativeLayout
+            android:id="@+id/rl_video"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_45dp"
+            android:paddingRight="@dimen/diment_10dp"
+            android:paddingLeft="@dimen/diment_10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="视频"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/more_right"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_0.5dp"
+            android:background="@color/color_e4e4e4" />
+
+        <RelativeLayout
+            android:id="@+id/rl_page"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_45dp"
+            android:paddingLeft="@dimen/diment_10dp"
+            android:paddingRight="@dimen/diment_10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="单页"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/more_right"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_0.5dp"
+            android:background="@color/color_e4e4e4" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

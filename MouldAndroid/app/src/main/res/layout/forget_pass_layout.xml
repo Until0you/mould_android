@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_48dp"
+        layout="@layout/title_layou"/>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="@dimen/diment_30dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <EditText
+        android:id="@+id/et_forget_one_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_45dp"
+        android:layout_marginTop="@dimen/diment_30dp"
+        android:layout_marginLeft="@dimen/diment_20dp"
+        android:layout_marginRight="@dimen/diment_20dp"
+        android:hint="手机号码"
+        android:maxLength="11"
+        android:paddingLeft="@dimen/diment_15dp"
+        android:paddingRight="@dimen/diment_15dp"
+        android:singleLine="true"
+        android:background="@drawable/bg_circular_border"/>
+
+
+    <Button
+        android:id="@+id/but_forget_next"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/diment_45dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_selector"
+        android:layout_marginTop="@dimen/diment_20dp"
+        android:textColor="@color/color_ffffff"
+        android:paddingLeft="@dimen/diment_30dp"
+        android:paddingRight="@dimen/diment_30dp"
+        android:enabled="false"
+        android:text="下一步"
+        android:textSize="@dimen/diment_18sp"/>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_eeeeee">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_48dp"
+        layout="@layout/title_text_layout"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_200dp">
+
+        <EditText
+            android:id="@+id/et_intro_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_200dp"
+            android:layout_marginTop="@dimen/diment_10dp"
+            android:background="@color/color_ffffff"
+            android:hint="请介绍下自己"
+            android:textSize="@dimen/diment_16sp"
+            android:paddingLeft="@dimen/diment_5dp"
+            android:paddingRight="@dimen/diment_5dp"
+            android:maxLength="30"
+            android:gravity="top"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="128"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/diment_5dp"
+            android:layout_marginBottom="@dimen/diment_5dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -2,15 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mouldandroid"
     android:versionCode="1"
-    android:versionName="1.0.0">
+    android:versionName="@string/app_version">
 
     <uses-sdk
-        android:minSdkVersion="20"
-        android:targetSdkVersion="25"/>
+        android:minSdkVersion="21"
+        android:targetSdkVersion="27"/>
 
     <!-- 所需要的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <!-- 屏幕适配 -->
     <supports-screens
@@ -29,6 +38,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <!--android:theme="@android:style/Theme.Light.NoTitleBar"-->
+
+        <!--//android:authorities="org.diql.fileprovider"   这里就是1中的参数 authority-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.mouldandroid.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
 
         <!-- 程序载入界面 -->
         <activity
@@ -60,6 +80,172 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <!-- 登录界面 -->
+        <activity
+            android:name="com.mouldandroid.activity.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <!-- 注册界面  -->
+        <activity
+            android:name="com.mouldandroid.activity.login.RegisteredActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <!-- 设置 -->
+        <activity
+            android:name="com.mouldandroid.activity.myinfo.MySettingsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 关于 -->
+        <activity
+            android:name="com.mouldandroid.activity.myinfo.MyAboutActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 帮助与反馈 -->
+        <activity
+            android:name="com.mouldandroid.activity.myinfo.HelpActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 用户协议 -->
+        <activity
+            android:name="com.mouldandroid.activity.myinfo.UserAgreementActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 个人中心界面 -->
+        <activity
+            android:name="com.mouldandroid.activity.myActivity.MyPersonalInfo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <!-- 消息列表 -->
+        <activity
+            android:name="com.mouldandroid.activity.message.MessageActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 消息内容 -->
+        <activity
+            android:name="com.mouldandroid.activity.message.MessageContent"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 个人简介 -->
+        <activity
+            android:name="com.mouldandroid.activity.myinfo.IntroActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible">
+        </activity>
+
+        <!-- 首页活动图片web链接 -->
+        <activity
+            android:name="com.mouldandroid.activity.webActivity.HomeDialogWeb"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 忘记密码界面 -->
+        <activity
+            android:name="com.mouldandroid.activity.login.ForgetPassActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.mouldandroid.activity.login.ForgetPassTwoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.mouldandroid.activity.login.ForgetPassThreeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 金融列表 -->
+        <activity
+            android:name="com.mouldandroid.activity.contentList.FinancialListHome"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.mouldandroid.activity.contentList.FinancialListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.mouldandroid.activity.contentList.FinancialListTwoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- *************************************************************************************** -->
+
+        <!-- 友盟 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5a619c728f4a9d4a830000c2" >
+        </meta-data>
+
+        <!-- 微信 -->
+        <activity
+            android:name="com.mouldandroid.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1105506045" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+
+        <!-- 新浪 -->
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="false"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:launchMode="singleTask"
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.mouldandroid.apshare.ShareEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
     </application>
 

@@ -1,17 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/fl_tabview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+
+    <RadioGroup
+        android:id="@+id/rg_page"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/color_ffffff">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/diment_50dp"
+            android:layout_marginBottom="@dimen/diment_1dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:drawableTop="@mipmap/icon_red_home_24dp"
+            android:textSize="@dimen/diment_18sp"
+            android:text="首页"
+            android:textColor="@color/color_000000"/>
+
+        <RadioButton
+            android:id="@+id/rb_component"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/diment_50dp"
+            android:layout_marginBottom="@dimen/diment_1dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@mipmap/icon_red_wallet_24dp"
+            android:text="组件"
+            android:textSize="@dimen/diment_18sp"
+            android:textColor="@color/color_000000"/>
+
+        <RadioButton
+            android:id="@+id/rb_content"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/diment_50dp"
+            android:layout_marginBottom="@dimen/diment_1dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@mipmap/icon_red_more_24dp"
+            android:textSize="@dimen/diment_18sp"
+            android:text="内容"
+            android:textColor="@color/color_000000"/>
+
+        <RadioButton
+            android:id="@+id/rb_my"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/diment_50dp"
+            android:layout_marginBottom="@dimen/diment_1dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@mipmap/icon_red_user_24dp"
+            android:textSize="@dimen/diment_18sp"
+            android:text="我的"
+            android:textColor="@color/color_000000"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <com.mouldandroid.custom.view.CustomizeTabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_ffffff"/>
+
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_000000"/>
+
+            <com.ashokvarma.bottomnavigation.BottomNavigationBar
+                android:id="@+id/bottomNavigationBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bnbActiveColor="@color/color_ea4455"
+                app:bnbInactiveColor="@color/color_000000"
+                app:bnbBackgroundColor="@color/color_ffffff"
+                android:layout_alignParentBottom="true"/>
+
+        </LinearLayout>
+
+</RelativeLayout>

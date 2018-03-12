@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_eeeeee"
+    android:orientation="vertical">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_48dp"
+        layout="@layout/title_layou"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/diment_20dp">
+
+        <ImageView
+            android:id="@+id/iv_about_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/diment_20dp"
+            android:layout_marginBottom="@dimen/diment_20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/iv_about_logo"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="版本："/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_version"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_0.5dp"
+        android:background="@color/color_e4e4e4" />
+
+    <RelativeLayout
+        android:id="@+id/my_about_score"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_45dp"
+        android:background="@color/color_ffffff"
+        android:paddingLeft="@dimen/diment_20dp"
+        android:paddingRight="@dimen/diment_20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="给我评分"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_000000"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/more_right"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_0.5dp"
+        android:background="@color/color_e4e4e4" />
+
+    <RelativeLayout
+        android:id="@+id/about_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_45dp"
+        android:background="@color/color_ffffff"
+        android:paddingLeft="@dimen/diment_20dp"
+        android:paddingRight="@dimen/diment_20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户服务协议及隐私政策"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_000000"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/more_right"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_0.5dp"
+        android:background="@color/color_e4e4e4" />
+
+</LinearLayout>

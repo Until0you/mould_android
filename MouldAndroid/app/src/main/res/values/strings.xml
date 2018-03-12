@@ -1,3 +1,13 @@
 <resources>
+
+    <string name="edittext_name_digits">._0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ</string>
     <string name="app_name">Mould</string>
+    <string name="app_version">1.0.0</string>
+    <string name="login_hint_account">请输入手机</string>
+    <string name="login_hint_password">请输入密码</string>
+    <string name="cancel_action">取消</string>
+    <string name="open_camera_failure">打开相机失败</string>
+    <string name="permission_camera_denied">请打开相关权限</string>
+    
+    
 </resources>

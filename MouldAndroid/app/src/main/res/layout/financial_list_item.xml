@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android_custom="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/color_ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/diment_10dp"
+        android:layout_marginRight="@dimen/diment_10dp"
+        android:paddingBottom="@dimen/diment_10dp"
+        android:paddingTop="@dimen/diment_10dp">
+
+        <TextView
+            android:id="@+id/tv_financial_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="风年报58期"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_financial_title"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="@dimen/diment_50dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年化率"/>
+
+                <TextView
+                    android:id="@+id/tv_financial_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9.00%"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/diment_50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="投资期限"/>
+
+                <TextView
+                    android:id="@+id/tv_financial_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="365天"/>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <com.mouldandroid.custom.view.CircleProgressBar
+                    android:id="@+id/circleProgressBar"
+                    android:layout_width="@dimen/diment_50dp"
+                    android:layout_height="@dimen/diment_50dp"
+                    android:layout_centerHorizontal="true"
+                    android_custom:roundColor="@color/color_bfbfbf"
+                    android_custom:roundWidth="@dimen/diment_2dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20%"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

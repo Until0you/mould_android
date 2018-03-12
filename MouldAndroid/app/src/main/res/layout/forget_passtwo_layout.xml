@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_48dp"
+        layout="@layout/title_layou"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="@dimen/diment_30dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diment_45dp"
+        android:layout_marginTop="@dimen/diment_30dp">
+
+        <EditText
+            android:id="@+id/et_forget_two_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diment_45dp"
+            android:layout_marginLeft="@dimen/diment_20dp"
+            android:layout_marginRight="@dimen/diment_20dp"
+            android:maxLength="6"
+            android:hint="短信验证码"
+            android:paddingLeft="@dimen/diment_15dp"
+            android:paddingRight="@dimen/diment_15dp"
+            android:singleLine="true"
+            android:background="@drawable/bg_circular_border"/>
+
+        <com.mouldandroid.custom.view.TimeButton
+            android:id="@+id/tb_forget_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/diment_20dp"
+            android:layout_marginRight="@dimen/diment_20dp"
+            android:paddingLeft="@dimen/diment_10dp"
+            android:paddingRight="@dimen/diment_10dp"
+            android:layout_centerVertical="true"
+            android:text="获取验证码"
+            android:background="@drawable/bg_circular"
+            android:singleLine="true"/>
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/but_forget_two_next"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/diment_45dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_selector"
+        android:layout_marginTop="@dimen/diment_20dp"
+        android:textColor="@color/color_ffffff"
+        android:paddingLeft="@dimen/diment_30dp"
+        android:paddingRight="@dimen/diment_30dp"
+        android:enabled="false"
+        android:text="下一步"
+        android:textSize="@dimen/diment_18sp"/>
+
+</LinearLayout>
